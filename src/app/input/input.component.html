@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<body class="bg-secondary">
+    <nav class="navbar navbar-dark bg-dark mb-10">
+        <div class="navbar-brand mb-9 h1" style="font-size: 30px; color: rgb(190, 180, 180);font-weight: bold;">
+            Angular Http Assignment
+        </div>
+        <div class="navbar-expand mr-auto">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active btn-size" (click)=form()>Home</a>
+                <a class="nav-item nav-link btn-space active btn-size" (click)=fromJson()>Image</a>
+                <a class="nav-item nav-link btn-space active btn-size" (click)=fromSystem()>Check</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+            <h1 class="text-center title">FORM</h1>
+            <div *ngIf="mesg" class="alert alert-success alert-dismissible" role="alert">
+                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                <button (click)="closemsg()" type="button" class="close" data-dismiss="alert" aria-label="Close">X
+                </button>
+              </div>
+            <form [formGroup]="user">
+                <div class="form-group">
+                    <label for="tname" class="size">Title: </label>
+                    <input id="tname" type="text" class="form-control form-control-lg" formControlName="title">
+                </div>
+                <div class="form-group">
+                    <label for="image" class="size">Image: </label>
+                    <input id="image" type="file" class="form-control" (change)="readUrl($event)"
+                        formControlName="imageOne">
+
+                </div>
+                <div class="mb-3">
+                    <label for="img" class="size">Thumbnail: </label>
+                    <input id="img" class="form-control form-control-lg" type="file" (change)="readUrl2($event)"
+                        formControlName="imageTwo">
+                </div>
+                <hr class="my-8">
+                <button class="btn btn-primary btn btn-space btn-size" type="submit" [disabled]="user.invalid"
+                    (click)=submitForm()>Add</button>
+
+            </form>
+        </div>
+    </div>
+    
+    <hr class="striped-border">
+    <footer class="container text-center style-one">
+        <li>
+            In the above "Image" in nav bar, we will get all the image from JsonPlaceholder-Photos
+        </li>
+        <li>
+            In the "Check" in nav bar, you will be able to check the image you have inputed
+        </li>
+    </footer>
+</body>

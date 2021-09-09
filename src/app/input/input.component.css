@@ -1,0 +1,29 @@
+.btn-space {
+    margin-right: 5px;
+}
+
+.size{
+    font-size: 30px;
+    color:black;
+}
+.striped-border { 
+    border: 1px dashed rgb(63, 3, 43); 
+    width: 50%; 
+    margin: auto; 
+    margin-top: 5%; 
+    margin-bottom: 5%; 
+}
+.btn-size{
+    padding: 10px 20px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+.title{
+    color:rgb(250, 242, 244); 
+    font-size: 70px;
+    font-style:oblique;
+    font-weight: bold;
+}
+.style-one{
+    font-size: 20px;
+}
