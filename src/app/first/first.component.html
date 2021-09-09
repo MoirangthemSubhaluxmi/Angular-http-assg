@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light mb-10" style="background-color: #e3f2fd;">
+    <div class="container"> 
+        <div class="navbar-brand mb-9 h1" style="font-size: 30px; color: rgb(190, 180, 180);font-weight: bold;">
+            Wait for a min
+        </div>
+    <button class="btn btn-secondary" type="submit" (click)=return()>Return</button>
+    </div>
+</nav>
+<span class="border"></span>
+<div class="col d-flex justify-content-center">
+    <div class="card" style="width: 25rem;">
+        <div *ngFor="let user of getUser">
+      <img class="card-img-top" src="{{user?.url}}" alt="myimage">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{user?.title}}</h5>
+        <img class="card-img-top" src="{{user?.thumbnailUrl}}" alt="myimage2">
+        <hr>
+      </div>  
+    </div>
+    </div>
